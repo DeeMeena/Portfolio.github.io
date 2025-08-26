@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+/* Import a modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Basic setup for the whole page */
+/* Basic setup for the whole page */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    /* We keep text-align here for convenience */
+    text-align: center;
+}
+/* This new wrapper is now responsible for centering */
+.content-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    
+    /* These are the centering rules we moved from the body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The main container holding all content */
+.container {
+    max-width: 600px;
+    width: 100%;
+    
+    /* MODIFICATION: Added to ensure content stays on top of the video */
+    position: relative;
+    z-index: 1;
+}
+
+/* Style for the profile picture */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image a circle */
+    border: 3px solid #ffffff;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Style for your name */
+.name {
+    font-size: 2em; /* 'em' is a responsive unit of size */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Style for your title/bio */
+.title {
+    font-size: 1.2em;
+    color: #ffffff; /* A slightly dimmer white for the subtitle */
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Container for all the links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between the link buttons */
+}
+
+/* Style for each link button */
+.link-button {
+    background-color: #1c3459;
+    color: #ffffff;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333333;
+    transition: all 0.4s ease-out;
+}
+
+/* Style for the icons inside the buttons */
+.link-button i {
+    margin-right: 10px; /* Adds space between the icon and the text */
+    font-size: 1.2em;
+}
+
+/* Hover effect for the link buttons */
+.link-button:hover {
+    background-color: #96063b; /* You can keep or change the hover color */
+    transform: translateY(-5px) scale(1.33);
+    box-shadow: 0 8px 15px rgba(55, 2, 2, 0.3);
+}
+
+/* ======================== */
+/* Contact Info Section CSS */
+/* ======================== */
+.contact-info {
+    margin-top: 40px; /* Adds some space above the contact section */
+    display: flex;
+    justify-content: center; /* Centers the contact items */
+    flex-wrap: wrap; /* Allows items to stack on smaller screens */
+    gap: 25px; /* Adds space between contact items if you have more than one */
+}
+
+.contact-item {
+    color: #ffffff; /* A slightly dimmer white for a subtle look */
+    text-decoration: none; /* Removes the default link underline */
+    display: inline-flex; /* Helps align the icon and text */
+    align-items: center;
+    font-size: 0.9em; /* Makes the text a bit smaller than the buttons */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.contact-item:hover {
+    color: #96063b; /* Brightens the text on hover */
+}
+
+.contact-item i {
+    margin-right: 8px; /* Adds a small space between the icon and the text */
+    font-size: 2.1em; /* Makes the icon slightly bigger than the text */
+}
+
+/* ================================== */
+/* NEW: Video Background Section CSS  */
+/* ================================== */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Places it behind everything */
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover; /* Makes the video cover the entire screen */
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    z-index: -1; /* Sits between the video and your content */
+}
